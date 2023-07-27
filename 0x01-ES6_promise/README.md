@@ -1,6 +1,7 @@
-Tasks
-0. Keep every promise you make and only make promises you can keep
-mandatory
+# Tasks
+
+### 0. Keep every promise you make and only make promises you can keep
+
 Return a Promise using this prototype function getResponseFromAPI()
 
 bob@dylan:~$ cat 0-main.js
@@ -13,8 +14,8 @@ bob@dylan:~$ npm run dev 0-main.js
 true
 
    
-1. Don't make a promise...if you know you can't keep it
-mandatory
+### 1. Don't make a promise...if you know you can't keep it.
+
 Using the prototype below, return a promise. The parameter is a boolean.
 
 getFullResponseFromAPI(success)
@@ -42,8 +43,8 @@ Promise {
     ...
 
    
-2. Catch me if you can!
-mandatory
+### 2. Catch me if you can!
+
 Using the function prototype below
 
 function handleResponseFromAPI(promise)
@@ -64,8 +65,8 @@ bob@dylan:~$ npm run dev 2-main.js
 Got a response from the API
 
    
-3. Handle multiple successful promises
-mandatory
+### 3. Handle multiple successful promises
+
 In this file, import uploadPhoto and createUser from utils.js
 
 Knowing that the functions in utils.js return promises, use the prototype below to collectively resolve all promises and log body firstName lastName to the console.
@@ -78,13 +79,12 @@ import handleProfileSignup from "./3-all";
 
 handleProfileSignup();
 
-bob@dylan:~$ 
 bob@dylan:~$ npm run dev 3-main.js 
 photo-profile-1 Guillaume Salva
 
    
-4. Simple promise
-mandatory
+### 4. Simple promise
+
 Using the following prototype
 
 function signUpUser(firstName, lastName) {
@@ -104,8 +104,8 @@ bob@dylan:~$ npm run dev 4-main.js
 Promise { { firstName: 'Bob', lastName: 'Dylan' } }
 
    
-5. Reject the promises
-mandatory
+### 5. Reject the promises
+
 Write and export a function named uploadPhoto. It should accept one argument fileName (string).
 
 The function should return a Promise rejecting with an Error and the string $fileName cannot be processed
@@ -117,8 +117,7 @@ bob@dylan:~$ cat 5-main.js
 import uploadPhoto from './5-photo-reject';
 
 console.log(uploadPhoto('guillaume.jpg'));
-
-bob@dylan:~$ 
+ 
 bob@dylan:~$ npm run dev 5-main.js 
 Promise {
   <rejected> Error: guillaume.jpg cannot be processed
@@ -126,8 +125,8 @@ Promise {
     ..
 
    
-6. Handle multiple promises
-mandatory
+### 6. Handle multiple promises
+
 Import signUpUser from 4-user-promise.js and uploadPhoto from 5-photo-reject.js.
 
 Write and export a function named handleProfileSignup. It should accept three arguments firstName (string), lastName (string), and fileName (string). The function should call the two other functions. When the promises are all settled it should return an array with the following structure:
@@ -148,8 +147,8 @@ bob@dylan:~$ npm run dev 6-main.js
 Promise { <pending> }
 
    
-7. Load balancer
-mandatory
+### 7. Load balancer
+
 Write and export a function named loadBalancer. It should accept two arguments chinaDownload (Promise) and USDownload (Promise).
 
 The function should return the value returned by the promise that resolved the first.
@@ -187,8 +186,8 @@ Downloading from UK is faster
 Downloading from FR is faster
 
    
-8. Throw error / try catch
-mandatory
+### 8. Throw error / try catch
+
 Write a function named divideFunction that will accept two arguments: numerator (Number) and denominator (Number).
 
 When the denominator argument is equal to 0, the function should throw a new error with the message cannot divide by 0. Otherwise it should return the numerator divided by the denominator.
@@ -211,8 +210,8 @@ bob@dylan:~$ npm run dev 8-main.js
 .....
 
 
-9. Throw an error
-mandatory
+### 9. Throw an error
+
 Write a function named guardrail that will accept one argument mathFunction (Function).
 
 This function should create and return an array named queue.
@@ -238,8 +237,8 @@ bob@dylan:~$ npm run dev 9-main.js
 [ 'Error: cannot divide by 0', 'Guardrail was processed' ]
 
    
-10. Await / Async
-#advanced
+### 10. Await / Async
+
 Import uploadPhoto and createUser from utils.js
 
 Write an async function named asyncUploadUser that will call these two functions and return an object with the following format:
@@ -263,8 +262,7 @@ const test = async () => {
 };
 
 test();
-
-bob@dylan:~$ 
+ 
 bob@dylan:~$ npm run dev 100-main.js 
 {
   photo: { status: 200, body: 'photo-profile-1' },
